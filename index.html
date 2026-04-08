@@ -721,17 +721,161 @@ table.kpi-table {
   gap: 24px;
 }
 
-@media (max-width: 768px) {
-  .two-col { grid-template-columns: 1fr; }
-  .hero-inner { grid-template-columns: 1fr; }
+/* TABLET */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 24px; }
   .hero-badge { display: none; }
-  nav { display: none; }
-  .flow-steps {
-    grid-template-columns: 1fr;
+  .cards { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .metrics { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  .stack-grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  nav { gap: 2px; }
+  nav a { font-size: 11px; padding: 5px 8px; }
+
+  /* Scripts table — card layout on tablet */
+  .scripts-table, .scripts-table thead, .scripts-table tbody,
+  .scripts-table th, .scripts-table tr, .scripts-table td {
+    display: block;
   }
+  .scripts-table thead { display: none; }
+  .scripts-table tr {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 8px 12px;
+    align-items: start;
+  }
+  .scripts-table tr.row-done { opacity: 0.5; }
+  .scripts-table tr.row-done td:last-child { opacity: 1; }
+  .scripts-table td { padding: 0; border: none; }
+  .scripts-table td:first-child { grid-row: 1; grid-column: 1; }
+  .scripts-table td:nth-child(2) { grid-row: 1; grid-column: 2; }
+  .scripts-table td:last-child { grid-row: 1; grid-column: 3; align-self: center; text-align: right; }
+  .scripts-table td:nth-child(3) { grid-row: 2; grid-column: 1 / -1; }
+  .scripts-table td:nth-child(4) { grid-row: 3; grid-column: 1 / -1; }
+  .scripts-table td:nth-child(5) { grid-row: 4; grid-column: 1 / -1; }
+  .scripts-table td:nth-child(3)::before { content: 'Hook: '; font-weight: 700; color: var(--orange); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .scripts-table td:nth-child(4)::before { content: 'Story: '; font-weight: 700; color: var(--blue); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .scripts-table td:nth-child(5)::before { content: 'Offer: '; font-weight: 700; color: var(--green); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  nav { display: none; }
+  .header-inner { height: 50px; }
+  .logo { font-size: 16px; }
+
+  .hero { padding: 36px 16px 32px; }
+  .hero-title { font-size: clamp(32px, 8vw, 48px); }
+  .hero-desc { font-size: 14px; }
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+  .hero-stat-val { font-size: 28px; }
+
+  .main { padding: 24px 16px 60px; }
+  .section { margin-bottom: 40px; }
+  .section-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .section-num { font-size: 40px; }
+  .section-title { font-size: 24px; }
+
+  .cards { grid-template-columns: 1fr; }
+  .card { padding: 18px; }
+  .card-title { font-size: 17px; }
+
+  .flow-steps { grid-template-columns: 1fr; }
   .flow-step + .flow-step { border-left: 1px solid var(--border); border-top: none; }
   .flow-step:first-child { border-radius: 8px 8px 0 0; }
   .flow-step:last-child { border-radius: 0 0 8px 8px; }
+  .flow-arrow { display: none; }
+
+  .metrics { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .metric { padding: 12px; }
+  .metric-val { font-size: 26px; }
+
+  .phase-banner { flex-direction: column; gap: 12px; padding: 16px; }
+  .phase-num { font-size: 36px; }
+  .phase-title { font-size: 17px; }
+
+  .overall-progress { flex-direction: column; gap: 12px; padding: 16px; }
+  .overall-label { white-space: normal; }
+
+  .callout, .warning { padding: 14px 16px; }
+  .script-box { padding: 16px; }
+
+  .kpi-table { font-size: 12px; }
+  .kpi-table th, .kpi-table td { padding: 8px; }
+
+  .timeline { padding-left: 28px; }
+  .tl-dot { left: -22px; width: 14px; height: 14px; }
+
+  .stack-grid { grid-template-columns: 1fr; }
+  .stack-card { padding: 16px; }
+
+  .two-col { grid-template-columns: 1fr; }
+
+  .done-counter { bottom: 16px; right: 16px; padding: 8px 14px; font-size: 12px; }
+  .done-num { font-size: 16px; }
+
+  .scripts-counter { flex-direction: column; gap: 8px; align-items: stretch; }
+  .scripts-counter-num { font-size: 18px; text-align: center; }
+
+  /* KPI table horizontal scroll on small screens */
+  .kpi-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 400px) {
+  .hero { padding: 28px 12px 24px; }
+  .hero-title { font-size: 28px; }
+  .hero-stats { flex-direction: column; gap: 12px; }
+  .main { padding: 16px 12px 60px; }
+  .metrics { grid-template-columns: 1fr; }
+  .card-body { font-size: 13px; }
+  .logo { font-size: 14px; }
+}
+
+/* MOBILE MENU BUTTON */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 22px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  line-height: 1;
+}
+.mobile-menu-btn:hover { background: var(--surface-3); }
+
+@media (max-width: 768px) {
+  .mobile-menu-btn { display: block; }
+  nav#main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--charcoal-2);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 99;
+  }
+  nav#main-nav.open {
+    display: flex;
+  }
+  nav#main-nav a {
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 6px;
+  }
+  nav#main-nav a:hover { background: var(--surface-3); }
 }
 
 /* PHASE BANNER */
@@ -1030,7 +1174,8 @@ footer span { color: var(--orange); }
 <header>
   <div class="header-inner">
     <div class="logo">Crown <span>Roofing</span> LLC — Staff Playbook</div>
-    <nav>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+    <nav id="main-nav">
       <a href="#leads" class="active">Leads</a>
       <a href="#speed">Speed</a>
       <a href="#content">Content</a>
@@ -1761,7 +1906,7 @@ footer span { color: var(--orange); }
       </div>
     </div>
 
-    <table class="kpi-table" style="margin-bottom:32px;">
+    <div class="kpi-table-wrap"><table class="kpi-table" style="margin-bottom:32px;">
       <thead>
         <tr>
           <th>Channel</th>
@@ -1808,7 +1953,7 @@ footer span { color: var(--orange); }
           <td>No quarterly reactivation</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
 
     <div class="section-header" style="margin-top:40px;margin-bottom:20px;">
       <div class="section-label">
@@ -1969,6 +2114,17 @@ footer span { color: var(--orange); }
 </footer>
 
 <script>
+// MOBILE MENU
+function toggleMobileMenu() {
+  document.getElementById('main-nav').classList.toggle('open');
+}
+// Close menu when a nav link is clicked
+document.querySelectorAll('#main-nav a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('main-nav').classList.remove('open');
+  });
+});
+
 // SCROLL PROGRESS
 window.addEventListener('scroll', () => {
   const scrolled = window.scrollY;
