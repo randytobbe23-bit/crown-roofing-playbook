@@ -887,6 +887,142 @@ footer span { color: var(--orange); }
   font-size: 20px;
   font-weight: 900;
 }
+
+/* SCRIPTS TABLE */
+.scripts-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  table-layout: fixed;
+}
+
+.scripts-table th {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--orange);
+  background: var(--surface);
+}
+
+.scripts-table th:first-child { width: 50px; text-align: center; }
+.scripts-table th:nth-child(2) { width: 6%; }
+.scripts-table th:nth-child(3) { width: 28%; }
+.scripts-table th:nth-child(4) { width: 30%; }
+.scripts-table th:nth-child(5) { width: 30%; }
+.scripts-table th:last-child { width: 80px; text-align: center; }
+
+.scripts-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.scripts-table tr:hover td { background: var(--surface); }
+
+.scripts-table td:first-child { text-align: center; }
+.scripts-table td:last-child { text-align: center; }
+
+.scripts-table .script-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--orange);
+}
+
+.scripts-table .script-type {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.type-hidden { background: rgba(221,32,31,0.15); color: var(--orange-light); }
+.type-build { background: rgba(121,199,255,0.15); color: var(--blue); }
+.type-testimonial { background: rgba(61,170,106,0.15); color: #5FC882; }
+.type-drone { background: rgba(121,199,255,0.15); color: var(--blue); }
+.type-reactivation { background: rgba(221,32,31,0.15); color: var(--orange-light); }
+
+.script-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  border: 2px solid var(--surface-3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .15s;
+  font-size: 12px;
+  color: white;
+}
+
+.script-check.done {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.script-check.done::after { content: '✓'; }
+
+.scripts-table tr.row-done td { opacity: 0.5; }
+.scripts-table tr.row-done td:last-child { opacity: 1; }
+
+.script-hook { color: var(--text-primary); font-weight: 500; }
+.script-story { color: var(--text-secondary); }
+.script-offer { color: var(--text-secondary); }
+
+.scripts-counter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 12px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.scripts-counter-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+.scripts-counter-num {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--orange);
+}
+
+.scripts-counter-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--surface-3);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.scripts-counter-fill {
+  height: 100%;
+  background: var(--orange);
+  border-radius: 3px;
+  width: 0%;
+  transition: width .3s;
+}
 </style>
 </head>
 <body>
@@ -898,6 +1034,7 @@ footer span { color: var(--orange); }
       <a href="#leads" class="active">Leads</a>
       <a href="#speed">Speed</a>
       <a href="#content">Content</a>
+      <a href="#scripts">Scripts</a>
       <a href="#sales">Sales</a>
       <a href="#kpis">KPIs</a>
       <a href="#stack">Tech Stack</a>
@@ -964,7 +1101,7 @@ footer span { color: var(--orange); }
       <div class="phase-num">02</div>
       <div>
         <div class="phase-title">Set up automation before running ads</div>
-        <div class="phase-desc">Get GoHighLevel running with AI follow-up sequences first. Leads without a sub-5-minute response system are money wasted.</div>
+        <div class="phase-desc">Get Rantoro CRM running with AI follow-up sequences first. Leads without a sub-5-minute response system are money wasted.</div>
       </div>
     </div>
     <div class="phase-banner">
@@ -1009,7 +1146,7 @@ footer span { color: var(--orange); }
       <div class="card">
         <div class="card-channel ch-orange">Channel 1</div>
         <div class="card-title">AI Call Center</div>
-        <div class="card-body">Hire bilingual VAs (Nicaragua or Mexico-based) — they speak English and Spanish, which fits the roofing industry naturally. Load smart lists into Mojo Dialer. Use the drone pitch script. Pay per appointment set, not per hour.</div>
+        <div class="card-body">Hire bilingual VAs (Nicaragua or Mexico-based) — they speak English and Spanish, which fits the roofing industry naturally. Load smart lists into Rantoro Dialer. Use the drone pitch script. Pay per appointment set, not per hour.</div>
       </div>
       <div class="card">
         <div class="card-channel ch-amber">Channel 2</div>
@@ -1060,7 +1197,7 @@ footer span { color: var(--orange); }
       </div>
       <div class="flow-step">
         <div class="flow-step-num">4</div>
-        <div class="flow-step-text">Pull phone numbers, remove DNC, upload to Mojo Dialer</div>
+        <div class="flow-step-text">Pull phone numbers, remove DNC, upload to Rantoro Dialer</div>
       </div>
       <div class="flow-step">
         <div class="flow-step-num">5</div>
@@ -1102,8 +1239,8 @@ footer span { color: var(--orange); }
       </div>
       <div class="metric">
         <div class="metric-label">System</div>
-        <div class="metric-val">GHL</div>
-        <div class="metric-sub">GoHighLevel / SDU Hub</div>
+        <div class="metric-val">Rantoro</div>
+        <div class="metric-sub">Rantoro CRM Platform</div>
       </div>
     </div>
 
@@ -1119,7 +1256,7 @@ footer span { color: var(--orange); }
         <div class="tl-dot"></div>
         <div class="tl-time">Minute 0</div>
         <div class="tl-title">Lead opts in from Facebook ad or Google</div>
-        <div class="tl-desc">Form submission triggers automation instantly in GHL. No human needed.</div>
+        <div class="tl-desc">Form submission triggers automation instantly in Rantoro. No human needed.</div>
       </div>
       <div class="tl-item" onclick="toggleDone(this)">
         <div class="tl-dot"></div>
@@ -1161,7 +1298,7 @@ footer span { color: var(--orange); }
         <div class="tl-dot"></div>
         <div class="tl-time">Upon Booking</div>
         <div class="tl-title">Auto-confirmation to customer + rep calendar sync</div>
-        <div class="tl-desc">GHL sends auto-text to homeowner. Auto-text to rep. Google Calendar synced. No lost appointments.</div>
+        <div class="tl-desc">Rantoro sends auto-text to homeowner. Auto-text to rep. Google Calendar synced. No lost appointments.</div>
       </div>
     </div>
 
@@ -1195,7 +1332,7 @@ footer span { color: var(--orange); }
       </div>
       <div class="check-item" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text">Any lead uncontacted after 5 minutes triggers a manager alert in GHL</div>
+        <div class="check-text">Any lead uncontacted after 5 minutes triggers a manager alert in Rantoro</div>
       </div>
     </div>
   </div>
@@ -1212,7 +1349,7 @@ footer span { color: var(--orange); }
 
     <div class="callout">
       <div class="callout-title">Target: 5–10 Videos Every Month</div>
-      <div class="callout-text">That's 60–120 ad videos per year. Meta's AI will test which ones perform best and automatically allocate budget to winners. More creative volume = better optimization. Use ChatGPT + Instagram Edits teleprompter — no agency, no memorization needed.</div>
+      <div class="callout-text">That's 60–120 ad videos per year. Meta's AI will test which ones perform best and automatically allocate budget to winners. More creative volume = better optimization. Use Claude AI + Instagram Edits teleprompter — no agency, no memorization needed.</div>
     </div>
 
     <div class="cards" style="margin-bottom:32px;">
@@ -1247,7 +1384,7 @@ footer span { color: var(--orange); }
       </div>
       <div class="flow-step">
         <div class="flow-step-num">2</div>
-        <div class="flow-step-text">Input hook-story-offer framework into ChatGPT → get script</div>
+        <div class="flow-step-text">Input hook-story-offer framework into Claude AI → get script</div>
       </div>
       <div class="flow-step">
         <div class="flow-step-num">3</div>
@@ -1298,6 +1435,202 @@ footer span { color: var(--orange); }
     </div>
   </div>
 
+  <!-- SECTION: SCRIPTS LIBRARY -->
+  <div class="section" id="scripts">
+    <div class="section-header">
+      <div class="section-label">
+        <div class="section-eyebrow">Creative Library</div>
+        <div class="section-title">Hook → Story → Offer Scripts</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">How to use this table</div>
+      <div class="callout-text">Each row is a complete ad or call script idea. Feed the Hook, Story, and Offer into Claude AI to generate the full script. Check the box when it's been filmed/recorded. Target: 5–10 new scripts per month.</div>
+    </div>
+
+    <div class="scripts-counter">
+      <div class="scripts-counter-label">Scripts Completed</div>
+      <div class="scripts-counter-bar"><div class="scripts-counter-fill" id="scripts-fill"></div></div>
+      <div class="scripts-counter-num" id="scripts-count">0 / 20</div>
+    </div>
+
+    <table class="scripts-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Type</th>
+          <th>Hook</th>
+          <th>Story</th>
+          <th>Offer</th>
+          <th>Done</th>
+        </tr>
+      </thead>
+      <tbody id="scripts-body">
+        <tr>
+          <td><span class="script-num">1</span></td>
+          <td><span class="script-type type-hidden">Hidden Damage</span></td>
+          <td class="script-hook">"Stop — there's an epidemic of hidden roof damage in Michigan right now."</td>
+          <td class="script-story">Mrs. Johnson in Pinckney had no idea her roof was damaged until our drone caught it. Insurance covered the full replacement.</td>
+          <td class="script-offer">Free drone inspection — we never step on your roof. Click below to schedule.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">2</span></td>
+          <td><span class="script-type type-build">Build Video</span></td>
+          <td class="script-hook">"We're building a roof in your neighborhood RIGHT NOW."</td>
+          <td class="script-story">Show crew on-site, materials going up, transformation before/after. Keep it raw — phone footage, no polish.</td>
+          <td class="script-offer">Free upgrade to architectural shingles for neighbors who book this week.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">3</span></td>
+          <td><span class="script-type type-testimonial">Testimonial</span></td>
+          <td class="script-hook">"I didn't pay a DIME out of pocket for my new roof."</td>
+          <td class="script-story">Real homeowner on camera explains how insurance covered everything. Focus on how easy Crown made the process.</td>
+          <td class="script-offer">Same deal available — free inspection, we handle the insurance paperwork. Book below.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">4</span></td>
+          <td><span class="script-type type-drone">Drone Pitch</span></td>
+          <td class="script-hook">"Our drone just found something on your roof you need to see."</td>
+          <td class="script-story">Show drone footage of actual damage found on a local home. Explain what it means for the homeowner's insurance claim.</td>
+          <td class="script-offer">Free drone report sent to your phone — no roof access needed, no obligation.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">5</span></td>
+          <td><span class="script-type type-hidden">Hidden Damage</span></td>
+          <td class="script-hook">"Michigan homeowners — your roof is probably older than you think."</td>
+          <td class="script-story">Data shows 60% of roofs in Livingston County are 15+ years old. Most homeowners don't know they qualify for insurance replacement.</td>
+          <td class="script-offer">Free age assessment + drone inspection. Takes 10 minutes, zero cost. Book now.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">6</span></td>
+          <td><span class="script-type type-build">Build Video</span></td>
+          <td class="script-hook">"Watch us tear off and rebuild this entire roof in ONE DAY."</td>
+          <td class="script-story">Time-lapse of a full tear-off and install. Show the crew, the quality materials, the clean job site at the end.</td>
+          <td class="script-offer">15% price value guarantee — if you find a better quote, we'll beat it. Free estimate below.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">7</span></td>
+          <td><span class="script-type type-testimonial">Testimonial</span></td>
+          <td class="script-hook">"I was terrified of the cost — then Crown Roofing called my insurance."</td>
+          <td class="script-story">Homeowner shares fear of cost, then relief when insurance approved the claim. Highlight Crown handling all the paperwork.</td>
+          <td class="script-offer">We handle everything — inspection, insurance claim, install. Zero hassle. Book your free inspection.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">8</span></td>
+          <td><span class="script-type type-drone">Drone Pitch</span></td>
+          <td class="script-hook">"Your neighbors just got their roof replaced for FREE — here's how."</td>
+          <td class="script-story">Show a street where multiple homes got new roofs through insurance. Explain the process step by step.</td>
+          <td class="script-offer">Free drone scan of your roof + insurance eligibility check. No pressure, no cost.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">9</span></td>
+          <td><span class="script-type type-reactivation">Reactivation</span></td>
+          <td class="script-hook">"We inspected your roof 6 months ago — here's an update you need to hear."</td>
+          <td class="script-story">Explain that damage gets worse over time, insurance deadlines are approaching, and rates are going up.</td>
+          <td class="script-offer">Priority re-inspection for previous leads. Limited slots this week — reply YES to book.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">10</span></td>
+          <td><span class="script-type type-hidden">Hidden Damage</span></td>
+          <td class="script-hook">"WARNING: Your insurance company doesn't want you to know this."</td>
+          <td class="script-story">Explain how insurance companies deny claims when homeowners wait too long. Show a denied vs. approved claim side by side.</td>
+          <td class="script-offer">Free claim consultation — we review your roof AND your policy. Book below before the deadline.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">11</span></td>
+          <td><span class="script-type type-build">Build Video</span></td>
+          <td class="script-hook">"Here's what's UNDER your shingles that you can't see."</td>
+          <td class="script-story">During a tear-off, show rotted decking, water damage, mold — the hidden problems. Educate on why waiting costs more.</td>
+          <td class="script-offer">Free inspection reveals what's hiding under your shingles. We show you the photos same day.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">12</span></td>
+          <td><span class="script-type type-testimonial">Testimonial</span></td>
+          <td class="script-hook">"I almost hired the other guy — thank GOD I went with Crown."</td>
+          <td class="script-story">Customer shares bad experience with a competitor quote, then how Crown was transparent, fast, and handled insurance.</td>
+          <td class="script-offer">Get a second opinion — free. If your current quote is fair, we'll tell you. Book below.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">13</span></td>
+          <td><span class="script-type type-drone">Drone Pitch</span></td>
+          <td class="script-hook">"I can tell you if your roof qualifies in 10 minutes — without leaving the ground."</td>
+          <td class="script-story">Show the drone going up, capturing photos, generating the report on a tablet. Quick, professional, modern.</td>
+          <td class="script-offer">10-minute drone scan, instant report to your email. Free, no strings. Schedule now.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">14</span></td>
+          <td><span class="script-type type-reactivation">Reactivation</span></td>
+          <td class="script-hook">"You requested a roof inspection last year — are you still waiting?"</td>
+          <td class="script-story">Warm re-engagement. Acknowledge they were busy. Explain that storm season is coming and prices are rising.</td>
+          <td class="script-offer">Priority scheduling for returning leads. Same free inspection offer — but availability is limited this month.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">15</span></td>
+          <td><span class="script-type type-hidden">Hidden Damage</span></td>
+          <td class="script-hook">"3 signs your roof is about to cost you THOUSANDS."</td>
+          <td class="script-story">Educational — show granule loss, curling shingles, dark streaks. Explain what each means and why timing matters.</td>
+          <td class="script-offer">Free 15-point roof health check. We find all 3 signs (or give you peace of mind). Book below.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">16</span></td>
+          <td><span class="script-type type-build">Build Video</span></td>
+          <td class="script-hook">"The Crown Roofing crew just finished this beauty — look at this transformation."</td>
+          <td class="script-story">Dramatic before/after. Show the old damaged roof, then the finished product. Homeowner reaction if possible.</td>
+          <td class="script-offer">Your home could look like this — and insurance might cover it all. Free estimate, link below.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">17</span></td>
+          <td><span class="script-type type-testimonial">Testimonial</span></td>
+          <td class="script-hook">"My roof was 22 years old and I had NO IDEA insurance would cover it."</td>
+          <td class="script-story">Older homeowner shares surprise that age alone qualified them. Emphasize Crown walked them through every step.</td>
+          <td class="script-offer">Not sure if you qualify? We check for free. Most Michigan homeowners are surprised. Book below.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">18</span></td>
+          <td><span class="script-type type-drone">Drone Pitch</span></td>
+          <td class="script-hook">"We flew a drone over 50 homes last week — here's what we found."</td>
+          <td class="script-story">Compilation of damage found across a neighborhood. Show variety of issues — missing shingles, soft spots, flashing gaps.</td>
+          <td class="script-offer">Is YOUR roof on the list? Free drone scan — we'll fly over this week. Schedule below.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">19</span></td>
+          <td><span class="script-type type-reactivation">Reactivation</span></td>
+          <td class="script-hook">"Virtual Town Hall TONIGHT — free roof consultations for all attendees."</td>
+          <td class="script-story">Invite cold leads to a live event. Show past town hall clips, contracts signed live, happy homeowners.</td>
+          <td class="script-offer">Join free tonight — get a live consultation, financing options on the spot, and priority scheduling.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+        <tr>
+          <td><span class="script-num">20</span></td>
+          <td><span class="script-type type-hidden">Hidden Damage</span></td>
+          <td class="script-hook">"Florida just got hit — Michigan, you're NEXT. Here's how to protect your home."</td>
+          <td class="script-story">Tie current weather events to local risk. Show how storms in nearby states signal what's coming. Create urgency without fear.</td>
+          <td class="script-offer">Storm prep inspection — free. We check your roof before the weather does. Limited spots — book now.</td>
+          <td><div class="script-check" onclick="toggleScript(this)"></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
   <!-- SECTION 4: SALES SYSTEM -->
   <div class="section" id="sales">
     <div class="section-header">
@@ -1317,7 +1650,7 @@ footer span { color: var(--orange); }
       <div class="card">
         <div class="card-channel ch-orange">Role: Closer</div>
         <div class="card-title">Sales Reps / Closers</div>
-        <div class="card-body">Receive pre-set appointments from the GHL system. Review AI call recordings before arriving at the home. Run the War Wagon model: fill vehicle with 2–4 reps, work appointment clusters by territory. Use drone inspection as opening tool.</div>
+        <div class="card-body">Receive pre-set appointments from the Rantoro system. Review AI call recordings before arriving at the home. Run the War Wagon model: fill vehicle with 2–4 reps, work appointment clusters by territory. Use drone inspection as opening tool.</div>
       </div>
       <div class="card">
         <div class="card-channel ch-green">Role: Virtual Closer</div>
@@ -1342,7 +1675,7 @@ footer span { color: var(--orange); }
       <div class="tl-item" onclick="toggleDone(this)">
         <div class="tl-dot"></div>
         <div class="tl-time">Night Before</div>
-        <div class="tl-title">Pull appointment list from GHL calendar</div>
+        <div class="tl-title">Pull appointment list from Rantoro calendar</div>
         <div class="tl-desc">Cluster by zip code or territory. Assign reps. Pre-load drone reports for addresses.</div>
       </div>
       <div class="tl-item" onclick="toggleDone(this)">
@@ -1367,7 +1700,7 @@ footer span { color: var(--orange); }
         <div class="tl-dot"></div>
         <div class="tl-time">Same Evening</div>
         <div class="tl-title">Push all unclosed leads to virtual team</div>
-        <div class="tl-desc">Log in GHL. Virtual closers follow up by phone that same evening while the homeowner still remembers.</div>
+        <div class="tl-desc">Log in Rantoro. Virtual closers follow up by phone that same evening while the homeowner still remembers.</div>
       </div>
       <div class="tl-item" onclick="toggleDone(this)">
         <div class="tl-dot"></div>
@@ -1487,7 +1820,7 @@ footer span { color: var(--orange); }
     <div class="checklist">
       <div class="check-item" onclick="toggleCheck(this)">
         <div class="check-box"></div>
-        <div class="check-text"><strong style="color:var(--text-primary);">Response over 5 minutes</strong> — fix GHL automation immediately. Every minute costs you money.</div>
+        <div class="check-text"><strong style="color:var(--text-primary);">Response over 5 minutes</strong> — fix Rantoro automation immediately. Every minute costs you money.</div>
       </div>
       <div class="check-item" onclick="toggleCheck(this)">
         <div class="check-box"></div>
@@ -1526,21 +1859,21 @@ footer span { color: var(--orange); }
       <div class="stack-card">
         <div class="stack-icon">⚙️</div>
         <div class="stack-info">
-          <div class="stack-name">GoHighLevel (GHL)</div>
+          <div class="stack-name">Rantoro CRM</div>
           <div class="stack-desc">Central nerve center. AI appointment calling, 48-hour follow-up sequences, pipeline tracking, Google Calendar sync, recordings. Every lead flows through here.</div>
         </div>
       </div>
       <div class="stack-card">
         <div class="stack-icon">📞</div>
         <div class="stack-info">
-          <div class="stack-name">Mojo Dialer</div>
+          <div class="stack-name">Rantoro Dialer</div>
           <div class="stack-desc">Power dialer for call center. Pulls cell numbers for non-DNC contacts. Runs multi-line calling. Pair with bilingual VA team for maximum contact rate.</div>
         </div>
       </div>
       <div class="stack-card">
         <div class="stack-icon">🤖</div>
         <div class="stack-info">
-          <div class="stack-name">ChatGPT</div>
+          <div class="stack-name">Claude AI</div>
           <div class="stack-desc">Script generation. Feed it your hook-story-offer framework and ad type. Get a complete script in seconds. Paste into Instagram Edits. Repeat monthly.</div>
         </div>
       </div>
@@ -1576,7 +1909,7 @@ footer span { color: var(--orange); }
         <div class="stack-icon">📋</div>
         <div class="stack-info">
           <div class="stack-name">AI List Builder (PropStream / BatchLeads)</div>
-          <div class="stack-desc">Pull property records filtered to 15+ year roofs. Segment by home value. Match phones. Feed Mojo Dialer and text campaigns. This is the data foundation everything else rests on.</div>
+          <div class="stack-desc">Pull property records filtered to 15+ year roofs. Segment by home value. Match phones. Feed Rantoro Dialer and text campaigns. This is the data foundation everything else rests on.</div>
         </div>
       </div>
     </div>
@@ -1644,7 +1977,7 @@ window.addEventListener('scroll', () => {
   document.getElementById('scroll-progress').style.width = pct + '%';
 
   // NAV ACTIVE STATE
-  const sections = ['phases','leads','speed','content','sales','kpis','stack','dont'];
+  const sections = ['phases','leads','speed','content','scripts','sales','kpis','stack','dont'];
   const navLinks = document.querySelectorAll('nav a');
   let current = '';
   sections.forEach(id => {
@@ -1683,9 +2016,28 @@ function toggleDone(el) {
   updateProgress();
 }
 
+// SCRIPT CHECKBOXES
+function toggleScript(el) {
+  el.classList.toggle('done');
+  el.closest('tr').classList.toggle('row-done');
+  updateScriptsProgress();
+  updateProgress();
+}
+
+function updateScriptsProgress() {
+  const total = document.querySelectorAll('.scripts-table .script-check').length;
+  const done = document.querySelectorAll('.scripts-table .script-check.done').length;
+  const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+  const fill = document.getElementById('scripts-fill');
+  const count = document.getElementById('scripts-count');
+  if (fill) fill.style.width = pct + '%';
+  if (count) count.textContent = done + ' / ' + total;
+}
+
 // INIT
 document.addEventListener('DOMContentLoaded', () => {
   updateProgress();
+  updateScriptsProgress();
 });
 
 updateProgress();
