@@ -827,6 +827,19 @@ table.kpi-table {
   .kpi-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
 
+/* REPORTS RESPONSIVE */
+@media (max-width: 768px) {
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .kpi-card-value { font-size: 26px; }
+  .funnel-label { width: 90px; font-size: 11px; }
+  .rate-cards { grid-template-columns: 1fr 1fr; }
+  .rate-card-value { font-size: 30px; }
+  .report-controls { gap: 6px; }
+  .period-btn { padding: 6px 12px; font-size: 11px; }
+  .report-table { font-size: 12px; }
+  .report-table th, .report-table td { padding: 8px 10px; }
+}
+
 /* SMALL MOBILE */
 @media (max-width: 400px) {
   .hero { padding: 28px 12px 24px; }
@@ -1032,6 +1045,286 @@ footer span { color: var(--orange); }
   font-weight: 900;
 }
 
+/* REPORTS DASHBOARD */
+.report-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.period-btn {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.period-btn:hover { border-color: var(--border-accent); color: var(--text-primary); }
+.period-btn.active { background: var(--orange); border-color: var(--orange); color: white; }
+
+.report-refresh {
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.report-refresh:hover { border-color: var(--orange); color: var(--orange); }
+
+.report-updated {
+  font-size: 12px;
+  color: var(--text-muted);
+  width: 100%;
+  margin-top: 4px;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.kpi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px;
+  transition: border-color .2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card:hover { border-color: var(--border-accent); }
+
+.kpi-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--border);
+  transition: background .2s;
+}
+
+.kpi-card.kpi-highlight::before { background: var(--orange); }
+.kpi-card.kpi-green::before { background: var(--green); }
+.kpi-card.kpi-blue::before { background: var(--blue); }
+.kpi-card.kpi-warn::before { background: #F5A623; }
+
+.kpi-card-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.kpi-card-value {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.kpi-card-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.kpi-card.kpi-highlight .kpi-card-value { color: var(--orange); }
+.kpi-card.kpi-green .kpi-card-value { color: var(--green); }
+.kpi-card.kpi-blue .kpi-card-value { color: var(--blue); }
+.kpi-card.kpi-warn .kpi-card-value { color: #F5A623; }
+
+/* PIPELINE FUNNEL */
+.pipeline-funnel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 32px;
+}
+
+.funnel-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.funnel-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  width: 140px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.funnel-bar-wrap {
+  flex: 1;
+  height: 28px;
+  background: var(--surface);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.funnel-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width .4s ease;
+  min-width: 2px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.funnel-bar-count {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.funnel-count {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  width: 40px;
+  flex-shrink: 0;
+}
+
+/* REPORT TABLES */
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.report-table th {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 2px solid var(--orange);
+  background: var(--surface);
+}
+
+.report-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.report-table tr:hover td { background: var(--surface); }
+
+.report-table td:first-child {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.report-loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.report-loading .spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--surface-3);
+  border-top: 3px solid var(--orange);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.report-error {
+  text-align: center;
+  padding: 30px;
+  color: var(--red);
+  font-size: 14px;
+  background: rgba(212,74,58,0.08);
+  border: 1px solid rgba(212,74,58,0.2);
+  border-radius: 8px;
+}
+
+/* RATE CARDS ROW */
+.rate-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.rate-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.rate-card-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.rate-card-value {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.rate-card-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.rate-good { color: var(--green); }
+.rate-warn { color: #F5A623; }
+.rate-bad { color: var(--red); }
+
 /* SCRIPTS TABLE */
 .scripts-table {
   width: 100%;
@@ -1176,7 +1469,8 @@ footer span { color: var(--orange); }
     <div class="logo">Crown <span>Roofing</span> LLC — Staff Playbook</div>
     <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
     <nav id="main-nav">
-      <a href="#leads" class="active">Leads</a>
+      <a href="#reports" class="active">Reports</a>
+      <a href="#leads">Leads</a>
       <a href="#speed">Speed</a>
       <a href="#content">Content</a>
       <a href="#scripts">Scripts</a>
@@ -1218,6 +1512,160 @@ footer span { color: var(--orange); }
 </div>
 
 <div class="main">
+
+  <!-- REPORTS DASHBOARD -->
+  <div class="section" id="reports">
+    <div class="section-header">
+      <div class="section-label">
+        <div class="section-eyebrow">Live Dashboard</div>
+        <div class="section-title">Crown Roofing Reports</div>
+      </div>
+    </div>
+
+    <div class="report-controls">
+      <button class="period-btn active" onclick="loadReports('day')">Today</button>
+      <button class="period-btn" onclick="loadReports('week')">Week</button>
+      <button class="period-btn" onclick="loadReports('month')">Month</button>
+      <button class="period-btn" onclick="loadReports('quarter')">Quarter</button>
+      <button class="period-btn" onclick="loadReports('year')">Year</button>
+      <button class="report-refresh" onclick="loadReports()">↻ Refresh</button>
+      <div class="report-updated" id="report-updated"></div>
+    </div>
+
+    <!-- TOP KPI CARDS -->
+    <div class="kpi-grid" id="kpi-grid">
+      <div class="kpi-card kpi-highlight">
+        <div class="kpi-card-label">New Leads</div>
+        <div class="kpi-card-value" id="kpi-new-leads">—</div>
+        <div class="kpi-card-sub">Total inbound leads</div>
+      </div>
+      <div class="kpi-card kpi-blue">
+        <div class="kpi-card-label">Appointments Set</div>
+        <div class="kpi-card-value" id="kpi-appts">—</div>
+        <div class="kpi-card-sub">Booked inspections</div>
+      </div>
+      <div class="kpi-card kpi-warn">
+        <div class="kpi-card-label">No Shows</div>
+        <div class="kpi-card-value" id="kpi-noshows">—</div>
+        <div class="kpi-card-sub">Missed appointments</div>
+      </div>
+      <div class="kpi-card kpi-highlight">
+        <div class="kpi-card-label">Not Contacted</div>
+        <div class="kpi-card-value" id="kpi-not-contacted">—</div>
+        <div class="kpi-card-sub">Leads needing outreach</div>
+      </div>
+      <div class="kpi-card kpi-blue">
+        <div class="kpi-card-label">Estimates Given</div>
+        <div class="kpi-card-value" id="kpi-estimates">—</div>
+        <div class="kpi-card-sub">Proposals sent</div>
+      </div>
+      <div class="kpi-card kpi-green">
+        <div class="kpi-card-label">Contracts Signed</div>
+        <div class="kpi-card-value" id="kpi-contracts">—</div>
+        <div class="kpi-card-sub">Deals closed</div>
+      </div>
+      <div class="kpi-card kpi-warn">
+        <div class="kpi-card-label">Jobs In Progress</div>
+        <div class="kpi-card-value" id="kpi-in-progress">—</div>
+        <div class="kpi-card-sub">Active installs</div>
+      </div>
+      <div class="kpi-card kpi-green">
+        <div class="kpi-card-label">Completed Jobs</div>
+        <div class="kpi-card-value" id="kpi-completed">—</div>
+        <div class="kpi-card-sub">Finished installs</div>
+      </div>
+      <div class="kpi-card kpi-green">
+        <div class="kpi-card-label">Revenue Collected</div>
+        <div class="kpi-card-value" id="kpi-revenue">—</div>
+        <div class="kpi-card-sub">Invoiced amount</div>
+      </div>
+      <div class="kpi-card kpi-highlight">
+        <div class="kpi-card-label">Reviews Requested</div>
+        <div class="kpi-card-value" id="kpi-reviews">—</div>
+        <div class="kpi-card-sub">Google review asks</div>
+      </div>
+      <div class="kpi-card kpi-blue">
+        <div class="kpi-card-label">Pipeline Value</div>
+        <div class="kpi-card-value" id="kpi-pipeline-value">—</div>
+        <div class="kpi-card-sub">Open opportunity $</div>
+      </div>
+      <div class="kpi-card kpi-green">
+        <div class="kpi-card-label">Avg Deal Value</div>
+        <div class="kpi-card-value" id="kpi-avg-deal">—</div>
+        <div class="kpi-card-sub">Per closed contract</div>
+      </div>
+    </div>
+
+    <!-- CONVERSION RATES -->
+    <div class="section-header" style="margin-top:8px;margin-bottom:20px;">
+      <div class="section-label">
+        <div class="section-eyebrow">Performance</div>
+        <div class="section-title">Conversion Rates</div>
+      </div>
+    </div>
+
+    <div class="rate-cards" id="rate-cards">
+      <div class="rate-card">
+        <div class="rate-card-label">Booking Rate</div>
+        <div class="rate-card-value" id="rate-booking">—</div>
+        <div class="rate-card-sub">Leads → Appointments</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-card-label">Show Rate</div>
+        <div class="rate-card-value" id="rate-show">—</div>
+        <div class="rate-card-sub">Appts → Showed Up</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-card-label">Close Rate</div>
+        <div class="rate-card-value" id="rate-close">—</div>
+        <div class="rate-card-sub">Appts → Contracts</div>
+      </div>
+      <div class="rate-card">
+        <div class="rate-card-label">Cancellations</div>
+        <div class="rate-card-value" id="rate-cancel">—</div>
+        <div class="rate-card-sub">Cancelled appointments</div>
+      </div>
+    </div>
+
+    <!-- PIPELINE FUNNEL -->
+    <div class="section-header" style="margin-top:8px;margin-bottom:20px;">
+      <div class="section-label">
+        <div class="section-eyebrow">Pipeline</div>
+        <div class="section-title">Stage Breakdown</div>
+      </div>
+    </div>
+
+    <div class="pipeline-funnel" id="pipeline-funnel">
+      <div class="report-loading" id="report-loading">
+        <div class="spinner"></div><br>
+        Loading reports from Rantoro CRM...
+      </div>
+    </div>
+
+    <!-- STAGE DETAIL TABLE -->
+    <div id="stage-table-wrap" style="display:none;">
+      <div class="section-header" style="margin-top:8px;margin-bottom:20px;">
+        <div class="section-label">
+          <div class="section-eyebrow">Detail</div>
+          <div class="section-title">Stage Summary</div>
+        </div>
+      </div>
+
+      <div class="kpi-table-wrap">
+        <table class="report-table" id="stage-table">
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>Count</th>
+              <th>% of Total</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="stage-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
   <!-- OVERALL PROGRESS -->
   <div class="overall-progress">
@@ -2114,6 +2562,140 @@ footer span { color: var(--orange); }
 </footer>
 
 <script>
+// REPORTS DASHBOARD
+let currentPeriod = 'day';
+
+function fmt$(n) {
+  if (n >= 1000000) return '$' + (n / 1000000).toFixed(1) + 'M';
+  if (n >= 1000) return '$' + (n / 1000).toFixed(1) + 'K';
+  return '$' + n.toLocaleString();
+}
+
+function rateColor(val, goodThreshold, warnThreshold) {
+  if (val >= goodThreshold) return 'rate-good';
+  if (val >= warnThreshold) return 'rate-warn';
+  return 'rate-bad';
+}
+
+async function loadReports(period) {
+  if (period) currentPeriod = period;
+
+  // Update active button
+  document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+  const btns = document.querySelectorAll('.period-btn');
+  const periodMap = { day: 0, week: 1, month: 2, quarter: 3, year: 4 };
+  if (btns[periodMap[currentPeriod]]) btns[periodMap[currentPeriod]].classList.add('active');
+
+  // Show loading
+  document.getElementById('pipeline-funnel').innerHTML = '<div class="report-loading" id="report-loading"><div class="spinner"></div><br>Loading reports from Rantoro CRM...</div>';
+  document.getElementById('stage-table-wrap').style.display = 'none';
+
+  try {
+    const res = await fetch('/api/reports?period=' + currentPeriod);
+    if (!res.ok) throw new Error('API returned ' + res.status);
+    const data = await res.json();
+    renderReports(data);
+  } catch (err) {
+    document.getElementById('pipeline-funnel').innerHTML = '<div class="report-error">Failed to load reports: ' + err.message + '<br><br>Make sure the API is deployed and environment variables are set.</div>';
+  }
+}
+
+function renderReports(data) {
+  const m = data.metrics;
+
+  // KPI cards
+  document.getElementById('kpi-new-leads').textContent = m.newLeads + m.optIns;
+  document.getElementById('kpi-appts').textContent = m.appointmentsSet;
+  document.getElementById('kpi-noshows').textContent = m.noShows;
+  document.getElementById('kpi-not-contacted').textContent = m.leadsNotContacted;
+  document.getElementById('kpi-estimates').textContent = m.estimates;
+  document.getElementById('kpi-contracts').textContent = m.contractsSigned;
+  document.getElementById('kpi-in-progress').textContent = m.jobsInProgress;
+  document.getElementById('kpi-completed').textContent = m.completedJobs;
+  document.getElementById('kpi-revenue').textContent = fmt$(m.totalRevenue);
+  document.getElementById('kpi-reviews').textContent = m.reviewRequests;
+  document.getElementById('kpi-pipeline-value').textContent = fmt$(m.pipelineValue);
+  document.getElementById('kpi-avg-deal').textContent = fmt$(m.avgDealValue);
+
+  // Rates
+  const bookEl = document.getElementById('rate-booking');
+  bookEl.textContent = m.bookingRate + '%';
+  bookEl.className = 'rate-card-value ' + rateColor(m.bookingRate, 30, 15);
+
+  const showEl = document.getElementById('rate-show');
+  showEl.textContent = m.showRate + '%';
+  showEl.className = 'rate-card-value ' + rateColor(m.showRate, 80, 60);
+
+  const closeEl = document.getElementById('rate-close');
+  closeEl.textContent = m.closeRate + '%';
+  closeEl.className = 'rate-card-value ' + rateColor(m.closeRate, 25, 15);
+
+  document.getElementById('rate-cancel').textContent = m.cancellations;
+
+  // Pipeline funnel
+  const stages = m.stageBreakdown;
+  const maxCount = Math.max(...stages.map(s => s.count), 1);
+  let funnelHTML = '';
+  for (const stage of stages) {
+    const pct = Math.max((stage.count / maxCount) * 100, stage.count > 0 ? 8 : 2);
+    funnelHTML += `
+      <div class="funnel-row">
+        <div class="funnel-label">${stage.name}</div>
+        <div class="funnel-bar-wrap">
+          <div class="funnel-bar" style="width:${pct}%;background:${stage.color}">
+            ${stage.count > 0 ? '<span class="funnel-bar-count">' + stage.count + '</span>' : ''}
+          </div>
+        </div>
+        <div class="funnel-count">${stage.count}</div>
+      </div>`;
+  }
+  document.getElementById('pipeline-funnel').innerHTML = funnelHTML;
+
+  // Stage detail table
+  const totalOpps = stages.reduce((s, st) => s + st.count, 0);
+  let tableHTML = '';
+  for (const stage of stages) {
+    const pctOfTotal = totalOpps > 0 ? Math.round((stage.count / totalOpps) * 100) : 0;
+    let statusClass = 'status-good';
+    let statusText = 'On Track';
+    if (stage.count === 0) { statusClass = ''; statusText = '—'; }
+    tableHTML += `<tr>
+      <td>${stage.name}</td>
+      <td style="font-weight:600;color:var(--text-primary)">${stage.count}</td>
+      <td>${pctOfTotal}%</td>
+      <td><span class="kpi-status ${statusClass}">${statusText}</span></td>
+    </tr>`;
+  }
+  // Add sales pipeline rows
+  tableHTML += `<tr><td colspan="4" style="padding:8px 14px;border-bottom:2px solid var(--orange);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);">Sales Pipeline</td></tr>`;
+  const salesRows = [
+    { name: 'Opt-Ins', count: m.optIns },
+    { name: 'Appointments Set', count: m.appointmentsSet },
+    { name: 'Cancellations', count: m.cancellations },
+    { name: 'No Shows', count: m.noShows },
+  ];
+  for (const row of salesRows) {
+    tableHTML += `<tr>
+      <td>${row.name}</td>
+      <td style="font-weight:600;color:var(--text-primary)">${row.count}</td>
+      <td>—</td>
+      <td>${row.count > 0 ? '<span class="kpi-status status-good">Active</span>' : '—'}</td>
+    </tr>`;
+  }
+
+  document.getElementById('stage-table-body').innerHTML = tableHTML;
+  document.getElementById('stage-table-wrap').style.display = 'block';
+
+  // Timestamp
+  const now = new Date();
+  document.getElementById('report-updated').textContent = 'Last updated: ' + now.toLocaleString();
+}
+
+// Load reports on page load
+document.addEventListener('DOMContentLoaded', () => {
+  loadReports('day');
+});
+
 // MOBILE MENU
 function toggleMobileMenu() {
   document.getElementById('main-nav').classList.toggle('open');
@@ -2133,7 +2715,7 @@ window.addEventListener('scroll', () => {
   document.getElementById('scroll-progress').style.width = pct + '%';
 
   // NAV ACTIVE STATE
-  const sections = ['phases','leads','speed','content','scripts','sales','kpis','stack','dont'];
+  const sections = ['reports','phases','leads','speed','content','scripts','sales','kpis','stack','dont'];
   const navLinks = document.querySelectorAll('nav a');
   let current = '';
   sections.forEach(id => {
