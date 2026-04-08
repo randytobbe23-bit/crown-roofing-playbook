@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crown Roofing LLC — Staff Playbook 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #dd201f;
+  --orange-light: #f34140;
+  --orange-dark: #b81a19;
+  --amber: #79c7ff;
+  --charcoal: #0a0a0a;
+  --charcoal-2: #171717;
+  --charcoal-3: #222222;
+  --surface: #141414;
+  --surface-2: #1c1c1c;
+  --surface-3: #262626;
+  --border: rgba(255,255,255,0.08);
+  --border-accent: rgba(221,32,31,0.35);
+  --text-primary: #F5F0EB;
+  --text-secondary: #A8A39C;
+  --text-muted: #6B6560;
+  --green: #3DAA6A;
+  --blue: #79c7ff;
+  --red: #D44A3A;
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--charcoal);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  background: var(--charcoal-2);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  gap: 16px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.logo span { color: var(--orange); }
+
+nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all .15s;
+  white-space: nowrap;
+}
+nav a:hover { color: var(--text-primary); background: var(--surface-3); }
+nav a.active { color: var(--orange); }
+
+.progress-bar {
+  height: 2px;
+  background: var(--border);
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--orange);
+  width: 0%;
+  transition: width .3s ease;
+}
+
+/* HERO */
+.hero {
+  background: var(--charcoal-2);
+  border-bottom: 1px solid var(--border);
+  padding: 56px 24px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -80px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(221,32,31,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5.5vw, 72px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.hero-title span { color: var(--orange); }
+
+.hero-desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+}
+
+.hero-stat-val {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+
+.hero-badge {
+  background: var(--surface-3);
+  border: 1px solid var(--border-accent);
+  border-radius: 8px;
+  padding: 20px 24px;
+  text-align: center;
+  min-width: 180px;
+}
+
+.hero-badge-num {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.hero-badge-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+}
+
+/* MAIN LAYOUT */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* SECTION */
+.section {
+  margin-bottom: 64px;
+  scroll-margin-top: 80px;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-num {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--surface-3);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.section-label {
+  flex: 1;
+}
+
+.section-eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 4px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+/* CARDS GRID */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  transition: border-color .2s, transform .2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: transparent;
+  transition: background .2s;
+}
+
+.card:hover::before { background: var(--orange); }
+
+.card-channel {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.ch-orange { background: rgba(221,32,31,0.15); color: var(--orange-light); }
+.ch-green { background: rgba(61,170,106,0.15); color: #5FC882; }
+.ch-blue { background: rgba(58,143,212,0.15); color: #6AADDF; }
+.ch-amber { background: rgba(121,199,255,0.15); color: var(--amber); }
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.card-body {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* FLOW STEPS */
+.flow-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0;
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.flow-step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.flow-step + .flow-step { border-left: none; }
+.flow-step:first-child { border-radius: 8px 0 0 8px; }
+.flow-step:last-child { border-radius: 0 8px 8px 0; }
+
+.flow-step-num {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.flow-step-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.flow-arrow {
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: var(--charcoal);
+  border: 1px solid var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  font-size: 10px;
+  color: var(--orange);
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: var(--border);
+}
+
+.tl-item {
+  position: relative;
+  padding: 0 0 24px 24px;
+  cursor: pointer;
+}
+
+.tl-item:last-child { padding-bottom: 0; }
+
+.tl-dot {
+  position: absolute;
+  left: -26px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--surface-3);
+  border: 2px solid var(--orange);
+  transition: background .2s;
+}
+
+.tl-item:hover .tl-dot,
+.tl-item.done .tl-dot {
+  background: var(--orange);
+}
+
+.tl-item.done .tl-dot::after {
+  content: '✓';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 9px;
+  color: white;
+  font-weight: 700;
+}
+
+.tl-time {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 4px;
+}
+
+.tl-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.tl-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* CHECKLIST */
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.check-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .15s;
+  border: 1px solid transparent;
+}
+
+.check-item:hover { background: var(--surface); border-color: var(--border); }
+.check-item.checked { background: rgba(61,170,106,0.05); border-color: rgba(61,170,106,0.2); }
+
+.check-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid var(--surface-3);
+  flex-shrink: 0;
+  margin-top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .15s;
+  font-size: 12px;
+  color: white;
+}
+
+.check-item.checked .check-box {
+  background: var(--green);
+  border-color: var(--green);
+}
+.check-item.checked .check-box::after { content: '✓'; }
+
+.check-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  transition: color .15s;
+}
+.check-item.checked .check-text {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+/* METRICS */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.metric {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.metric-val {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.metric-sub { font-size: 12px; color: var(--text-secondary); }
+
+/* CALLOUT */
+.callout {
+  background: rgba(221,32,31,0.08);
+  border: 1px solid var(--border-accent);
+  border-left: 3px solid var(--orange);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.callout-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--orange);
+  margin-bottom: 6px;
+}
+
+.callout-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* WARNING */
+.warning {
+  background: rgba(212,74,58,0.08);
+  border: 1px solid rgba(212,74,58,0.3);
+  border-left: 3px solid var(--red);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.warning .callout-title { color: #E06050; }
+
+/* TECH STACK */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.stack-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: border-color .2s;
+}
+
+.stack-card:hover { border-color: var(--border-accent); }
+
+.stack-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(221,32,31,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.stack-info { flex: 1; }
+
+.stack-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.stack-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* SCRIPT BOX */
+.script-box {
+  background: var(--charcoal-2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.script-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.script-text {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+/* KPI TABLE */
+table.kpi-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.kpi-table th {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.kpi-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+.kpi-table tr:last-child td { border-bottom: none; }
+.kpi-table tr:hover td { background: var(--surface); }
+
+.kpi-table td:first-child {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.kpi-status {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.status-good { background: rgba(61,170,106,0.15); color: #5FC882; }
+.status-warn { background: rgba(121,199,255,0.15); color: var(--amber); }
+.status-bad  { background: rgba(212,74,58,0.15); color: #E06050; }
+
+/* TWO COL */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .two-col { grid-template-columns: 1fr; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-badge { display: none; }
+  nav { display: none; }
+  .flow-steps {
+    grid-template-columns: 1fr;
+  }
+  .flow-step + .flow-step { border-left: 1px solid var(--border); border-top: none; }
+  .flow-step:first-child { border-radius: 8px 8px 0 0; }
+  .flow-step:last-child { border-radius: 0 0 8px 8px; }
+}
+
+/* PHASE BANNER */
+.phase-banner {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.phase-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.phase-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.phase-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* FOOTER */
+footer {
+  background: var(--charcoal-2);
+  border-top: 1px solid var(--border);
+  padding: 32px 24px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+footer span { color: var(--orange); }
+
+/* PROGRESS OVERALL */
+.overall-progress {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.overall-label {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.overall-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--surface-3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.overall-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--orange-dark), var(--orange), var(--orange-light));
+  border-radius: 4px;
+  width: 0%;
+  transition: width .4s ease;
+}
+
+.overall-pct {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--orange);
+  white-space: nowrap;
+  min-width: 48px;
+  text-align: right;
+}
+
+/* ANIMATE IN */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.section { animation: fadeUp .4s ease both; }
+
+/* TOOLTIP */
+.tooltip-wrap { position: relative; display: inline-block; }
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .15s;
+}
+.tooltip-wrap:hover .tooltip { opacity: 1; }
+
+/* STICKY DONE COUNTER */
+.done-counter {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--orange);
+  color: white;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(221,32,31,0.4);
+  transition: transform .2s;
+  z-index: 50;
+}
+
+.done-counter:hover { transform: scale(1.05); }
+
+.done-num {
+  font-size: 20px;
+  font-weight: 900;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">Crown <span>Roofing</span> LLC — Staff Playbook</div>
+    <nav>
+      <a href="#leads" class="active">Leads</a>
+      <a href="#speed">Speed</a>
+      <a href="#content">Content</a>
+      <a href="#sales">Sales</a>
+      <a href="#kpis">KPIs</a>
+      <a href="#stack">Tech Stack</a>
+      <a href="#dont">Do Not</a>
+    </nav>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="scroll-progress"></div></div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">2026 Operations Playbook</div>
+      <div class="hero-title">Make It<br><span>Rain Leads</span></div>
+      <div class="hero-desc">Crown Roofing's complete AI-powered operations system. Every channel, every script, every follow-up — automated and optimized. No storm required — no lead left behind. Follow each section to build a machine that runs year-round.</div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-val">5</div>
+          <div class="hero-stat-label">Lead Channels</div>
+        </div>
+        <div>
+          <div class="hero-stat-val">&lt;5min</div>
+          <div class="hero-stat-label">Target Response</div>
+        </div>
+        <div>
+          <div class="hero-stat-val">48hr</div>
+          <div class="hero-stat-label">Close Window</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-num">80</div>
+      <div class="hero-badge-label">Roofs in 30 days<br>proven model</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- OVERALL PROGRESS -->
+  <div class="overall-progress">
+    <div class="overall-label">Implementation Progress</div>
+    <div class="overall-bar"><div class="overall-fill" id="overall-fill"></div></div>
+    <div class="overall-pct" id="overall-pct">0%</div>
+  </div>
+
+  <!-- PHASE OVERVIEW -->
+  <div class="section" id="phases">
+    <div class="section-header">
+      <div class="section-label">
+        <div class="section-eyebrow">Before You Start</div>
+        <div class="section-title">5-Phase Implementation</div>
+      </div>
+    </div>
+
+    <div class="phase-banner">
+      <div class="phase-num">01</div>
+      <div>
+        <div class="phase-title">Build the data foundation</div>
+        <div class="phase-desc">Pull AI-generated smart lists of 15+ year old roofs before spending a dollar on ads. The list is everything.</div>
+      </div>
+    </div>
+    <div class="phase-banner">
+      <div class="phase-num">02</div>
+      <div>
+        <div class="phase-title">Set up automation before running ads</div>
+        <div class="phase-desc">Get GoHighLevel running with AI follow-up sequences first. Leads without a sub-5-minute response system are money wasted.</div>
+      </div>
+    </div>
+    <div class="phase-banner">
+      <div class="phase-num">03</div>
+      <div>
+        <div class="phase-title">Launch Facebook, then Google</div>
+        <div class="phase-desc">Facebook gives volume and control. Google gives higher intent. Run Facebook first to build your retargeting audiences.</div>
+      </div>
+    </div>
+    <div class="phase-banner">
+      <div class="phase-num">04</div>
+      <div>
+        <div class="phase-title">Build commission-only setter team</div>
+        <div class="phase-desc">Virtual setters and canvassers paid 3% of deal on close only. Low fixed cost, high accountability.</div>
+      </div>
+    </div>
+    <div class="phase-banner">
+      <div class="phase-num">05</div>
+      <div>
+        <div class="phase-title">Reactivate cold leads quarterly</div>
+        <div class="phase-desc">Virtual Town Hall via text + email + retargeting on your entire cold list. One event can generate $1M+ from leads you already paid for.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1: LEAD GENERATION -->
+  <div class="section" id="leads">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-label">
+        <div class="section-eyebrow">Channel Strategy</div>
+        <div class="section-title">5-Channel Lead Generation</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">The #1 Secret — The Smart List</div>
+      <div class="callout-text">Use AI to identify homes with roofs 15 years or older. Segment by home value — target higher-value homes first. This list feeds every single channel below. Without the right data, no channel performs. Build this before everything else.</div>
+    </div>
+
+    <div class="cards" style="margin-bottom:32px;">
+      <div class="card">
+        <div class="card-channel ch-orange">Channel 1</div>
+        <div class="card-title">AI Call Center</div>
+        <div class="card-body">Hire bilingual VAs (Nicaragua or Mexico-based) — they speak English and Spanish, which fits the roofing industry naturally. Load smart lists into Mojo Dialer. Use the drone pitch script. Pay per appointment set, not per hour.</div>
+      </div>
+      <div class="card">
+        <div class="card-channel ch-amber">Channel 2</div>
+        <div class="card-title">Facebook / Meta</div>
+        <div class="card-body">5–10 videos per month. Three frameworks: Hidden Damage, Build Video, Testimonial. Use Meta's dynamic creative testing — upload 5 versions and let the algorithm pick the winner. Retarget 10-second viewers aggressively.</div>
+      </div>
+      <div class="card">
+        <div class="card-channel ch-blue">Channel 3</div>
+        <div class="card-title">Google PPC + Maps</div>
+        <div class="card-body">Higher intent — people searching are ready to act now. Expensive, so your response system must be flawless. Post photos to Google My Business after every job. Hand every closed customer your phone to leave a Maps review on the spot.</div>
+      </div>
+      <div class="card">
+        <div class="card-channel ch-green">Channel 4</div>
+        <div class="card-title">Canvassing Team</div>
+        <div class="card-body">Commission-only setters at 3% of deal value — paid only on closes. Use active build sites as a canvas magnet: knock every neighbor's door. Virtual canvassers can cold-call AI lists remotely. Setter + closer model splits the roles cleanly.</div>
+      </div>
+      <div class="card">
+        <div class="card-channel ch-orange">Channel 5</div>
+        <div class="card-title">Drone Pitch</div>
+        <div class="card-body">Works over phone, text, and door-to-door. Send the homeowner photos without ever getting on their roof. No in-person meeting required. This lowers resistance dramatically. It's the easiest yes to get.</div>
+      </div>
+    </div>
+
+    <div class="script-box">
+      <div class="script-label">Call Center Script — Drone Pitch</div>
+      <div class="script-text">"Hey, what's going on? This is [Name] with Crown Roofing. My drone detected damage on your roof and I just want to make sure you don't get left out. All your neighbors didn't take their hard-earned money out of their bank account or 401k — they got their roof paid for by the insurance. Let me give you a free quote."</div>
+    </div>
+
+    <div class="section-header" style="margin-top:40px;">
+      <div class="section-label">
+        <div class="section-eyebrow">Data Workflow</div>
+        <div class="section-title">Smart List Build Process</div>
+      </div>
+    </div>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-step-num">1</div>
+        <div class="flow-step-text">AI scans property records for homes built 20+ years ago</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">2</div>
+        <div class="flow-step-text">Filter to roofs 15 years or older only</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">3</div>
+        <div class="flow-step-text">Segment by home value — target higher first</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">4</div>
+        <div class="flow-step-text">Pull phone numbers, remove DNC, upload to Mojo Dialer</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">5</div>
+        <div class="flow-step-text">Assign to call center or virtual setter team</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: SPEED TO LEAD -->
+  <div class="section" id="speed">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-label">
+        <div class="section-eyebrow">Follow-Up System</div>
+        <div class="section-title">Speed to Lead Protocol</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">The First 48 Hours Rule</div>
+      <div class="callout-text">Like solving a murder — if you don't make contact in the first 48 hours, your appointment set rate drops off a cliff. You need 6–8 touches within that window. Contact in under 5 minutes is the target. This is not optional — it's the system.</div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Target response</div>
+        <div class="metric-val">&lt;5</div>
+        <div class="metric-sub">Minutes after opt-in</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Touches in window</div>
+        <div class="metric-val">6–8</div>
+        <div class="metric-sub">Within first 48 hours</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Close window</div>
+        <div class="metric-val">48hr</div>
+        <div class="metric-sub">After this, rates drop sharply</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">System</div>
+        <div class="metric-val">GHL</div>
+        <div class="metric-sub">GoHighLevel / SDU Hub</div>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top:32px;margin-bottom:24px;">
+      <div class="section-label">
+        <div class="section-eyebrow">Automated Sequence</div>
+        <div class="section-title">48-Hour Touch Timeline</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">Minute 0</div>
+        <div class="tl-title">Lead opts in from Facebook ad or Google</div>
+        <div class="tl-desc">Form submission triggers automation instantly in GHL. No human needed.</div>
+      </div>
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">Under 5 Minutes</div>
+        <div class="tl-title">AI assistant calls the lead</div>
+        <div class="tl-desc">Introduces itself as an AI scheduling assistant. Books the appointment. Works at 2am. Recording saved for rep review.</div>
+      </div>
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">Minute 5–10</div>
+        <div class="tl-title">Automated text sent with drone inspection offer</div>
+        <div class="tl-desc">Sent from tracking number. Offers a free drone report, no roof access required.</div>
+      </div>
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">Hour 1–2</div>
+        <div class="tl-title">Second call from a different number</div>
+        <div class="tl-desc">Different caller ID increases pickup rate. If no answer, voicemail drop fires automatically.</div>
+      </div>
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">Hour 3–6</div>
+        <div class="tl-title">Follow-up text with social proof</div>
+        <div class="tl-desc">"Your neighbor at [cross street] just got their roof replaced by insurance at no out-of-pocket cost. I'd love to check if you qualify."</div>
+      </div>
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">Hour 6–24</div>
+        <div class="tl-title">Facebook retargeting ad serves to the lead</div>
+        <div class="tl-desc">Warm them digitally while your team works them directly. Testimonial or build video preferred.</div>
+      </div>
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">Hour 24–48</div>
+        <div class="tl-title">Final outreach — email + call + text</div>
+        <div class="tl-desc">Last chance before lead goes cold. Human call preferred if AI hasn't booked yet.</div>
+      </div>
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">Upon Booking</div>
+        <div class="tl-title">Auto-confirmation to customer + rep calendar sync</div>
+        <div class="tl-desc">GHL sends auto-text to homeowner. Auto-text to rep. Google Calendar synced. No lost appointments.</div>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top:40px;margin-bottom:20px;">
+      <div class="section-label">
+        <div class="section-eyebrow">Booking Rules</div>
+        <div class="section-title">Appointment Management Checklist</div>
+      </div>
+    </div>
+
+    <div class="checklist" id="checklist-booking">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Every appointment goes to shared Google Calendar — no exceptions, no lost bookings</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Automated confirmation text to homeowner immediately upon booking</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Automated reminder to sales rep 1 hour before every appointment</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">AI call recordings reviewed weekly for rep coaching</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Booking rate tracked weekly: leads generated ÷ appointments set = booking %</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Any lead uncontacted after 5 minutes triggers a manager alert in GHL</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: CONTENT ENGINE -->
+  <div class="section" id="content">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-label">
+        <div class="section-eyebrow">Facebook Strategy</div>
+        <div class="section-title">Monthly Content Engine</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">Target: 5–10 Videos Every Month</div>
+      <div class="callout-text">That's 60–120 ad videos per year. Meta's AI will test which ones perform best and automatically allocate budget to winners. More creative volume = better optimization. Use ChatGPT + Instagram Edits teleprompter — no agency, no memorization needed.</div>
+    </div>
+
+    <div class="cards" style="margin-bottom:32px;">
+      <div class="card">
+        <div class="card-channel ch-orange">Ad Type 1</div>
+        <div class="card-title">Hidden Damage Ad</div>
+        <div class="card-body"><strong style="color:var(--text-primary);">Hook:</strong> "Stop — there's an epidemic of hidden damage."<br><br><strong style="color:var(--text-primary);">Story:</strong> Show a homeowner (Mrs. Smith) who got their roof paid by insurance.<br><br><strong style="color:var(--text-primary);">Offer:</strong> Free inspection + architectural shingle upgrade for the cost of deductible only. Click link below.</div>
+      </div>
+      <div class="card">
+        <div class="card-channel ch-blue">Ad Type 2</div>
+        <div class="card-title">Build Video</div>
+        <div class="card-body"><strong style="color:var(--text-primary);">Hook:</strong> "We're building a roof in the neighborhood right now."<br><br><strong style="color:var(--text-primary);">Story:</strong> Show the crew, materials, the transformation in progress.<br><br><strong style="color:var(--text-primary);">Offer:</strong> Free upgrade, 15% price value guarantee, or 50% off upgrades to neighbors.</div>
+      </div>
+      <div class="card">
+        <div class="card-channel ch-green">Ad Type 3</div>
+        <div class="card-title">Testimonial Video</div>
+        <div class="card-body"><strong style="color:var(--text-primary);">Hook:</strong> Real customer on camera — relatable homeowner, not a spokesman.<br><br><strong style="color:var(--text-primary);">Story:</strong> Focus on how easy the insurance process was, how little they paid.<br><br><strong style="color:var(--text-primary);">Offer:</strong> Same deal available to viewers. Free inspection. Geico-style guarantee.</div>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top:40px;margin-bottom:24px;">
+      <div class="section-label">
+        <div class="section-eyebrow">No-Agency Workflow</div>
+        <div class="section-title">Video Production Process</div>
+      </div>
+    </div>
+
+    <div class="flow-steps" style="margin-bottom:32px;">
+      <div class="flow-step">
+        <div class="flow-step-num">1</div>
+        <div class="flow-step-text">Pick ad type: Hidden Damage, Build, or Testimonial</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">2</div>
+        <div class="flow-step-text">Input hook-story-offer framework into ChatGPT → get script</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">3</div>
+        <div class="flow-step-text">Paste into Instagram Edits teleprompter app</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">4</div>
+        <div class="flow-step-text">Record on phone — read while filming, no memorizing</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">5</div>
+        <div class="flow-step-text">Upload 5 versions — Meta A/B tests and picks the winner</div>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top:40px;margin-bottom:20px;">
+      <div class="section-label">
+        <div class="section-eyebrow">Ad Strategy</div>
+        <div class="section-title">Spray, Pray & Retarget</div>
+      </div>
+    </div>
+
+    <div class="checklist" id="checklist-content">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Use broad targeting — call out your audience IN the video ("Florida homeowners, stop right there"), let Meta find them</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Track who watches 10+ seconds — build a custom retargeting audience in Meta</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Retarget engaged viewers with follow-up offers until they book or permanently stop engaging</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Run 5 video variants simultaneously — use Meta dynamic creative optimization</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">Quarterly: run Virtual Town Hall — invite entire cold lead list via text, email, and retargeting campaign</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text">In town hall: take contracts live, offer loans, follow up same day — target $1M+ per event from old leads</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: SALES SYSTEM -->
+  <div class="section" id="sales">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-label">
+        <div class="section-eyebrow">Field Operations</div>
+        <div class="section-title">Setter → Closer Sales Model</div>
+      </div>
+    </div>
+
+    <div class="cards" style="margin-bottom:32px;">
+      <div class="card">
+        <div class="card-channel ch-blue">Role: Setter</div>
+        <div class="card-title">Appointment Setters</div>
+        <div class="card-body">Commission-only. Paid 3% of deal value on close only — not on every lead. Virtual setters cold-call AI lists. In-person canvassers knock doors at active build sites. This structure creates natural follow-through accountability: no close = no pay.</div>
+      </div>
+      <div class="card">
+        <div class="card-channel ch-orange">Role: Closer</div>
+        <div class="card-title">Sales Reps / Closers</div>
+        <div class="card-body">Receive pre-set appointments from the GHL system. Review AI call recordings before arriving at the home. Run the War Wagon model: fill vehicle with 2–4 reps, work appointment clusters by territory. Use drone inspection as opening tool.</div>
+      </div>
+      <div class="card">
+        <div class="card-channel ch-green">Role: Virtual Closer</div>
+        <div class="card-title">Virtual Sales Team</div>
+        <div class="card-body">Work old leads that canvassers set but didn't close in person. Close over phone or video call. This role attracts top performers who prefer remote work. Lowers cost per acquisition significantly and gives you a second shot at every unclosed lead.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">The War Wagon Approach</div>
+      <div class="callout-text">Load up your vehicle with reps every morning. Work appointment clusters by geography. One rep sets up the drone inspection while another closes from the previous stop. Push every unclosed appointment to the virtual team same evening. Every close triggers a Google review request before you leave the driveway.</div>
+    </div>
+
+    <div class="section-header" style="margin-top:40px;margin-bottom:24px;">
+      <div class="section-label">
+        <div class="section-eyebrow">Daily Operations</div>
+        <div class="section-title">War Wagon Daily Process</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">Night Before</div>
+        <div class="tl-title">Pull appointment list from GHL calendar</div>
+        <div class="tl-desc">Cluster by zip code or territory. Assign reps. Pre-load drone reports for addresses.</div>
+      </div>
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">Morning</div>
+        <div class="tl-title">Load 2–4 reps into the vehicle</div>
+        <div class="tl-desc">Briefing on the day's appointments, active build sites to canvas, and any outstanding follow-ups.</div>
+      </div>
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">All Day</div>
+        <div class="tl-title">Work confirmed appointments + canvas build site neighbors</div>
+        <div class="tl-desc">Every active build site: knock every door on the block. Drone pitch on the spot. Offer the same deal.</div>
+      </div>
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">During Visit</div>
+        <div class="tl-title">Run drone inspection — send report same day</div>
+        <div class="tl-desc">Send photos before you leave. "I've already emailed you the damage report" — keeps momentum.</div>
+      </div>
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">Same Evening</div>
+        <div class="tl-title">Push all unclosed leads to virtual team</div>
+        <div class="tl-desc">Log in GHL. Virtual closers follow up by phone that same evening while the homeowner still remembers.</div>
+      </div>
+      <div class="tl-item" onclick="toggleDone(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-time">Post-Close</div>
+        <div class="tl-title">Hand homeowner your phone open to Google Maps for review</div>
+        <div class="tl-desc">This is the cheapest long-term lead gen you will ever do. Make it non-negotiable on every close.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: KPIs -->
+  <div class="section" id="kpis">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div class="section-label">
+        <div class="section-eyebrow">Measurement</div>
+        <div class="section-title">KPIs to Track Weekly</div>
+      </div>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Cost per lead</div>
+        <div class="metric-val">$?</div>
+        <div class="metric-sub">Track by channel — know each one</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Booking rate</div>
+        <div class="metric-val">%</div>
+        <div class="metric-sub">Leads ÷ appointments set</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Cost per appt</div>
+        <div class="metric-val">$?</div>
+        <div class="metric-sub">CPL ÷ booking rate</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Close rate</div>
+        <div class="metric-val">%</div>
+        <div class="metric-sub">Appts ÷ contracts signed</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Cost per close</div>
+        <div class="metric-val">$?</div>
+        <div class="metric-sub">Total spend ÷ deals closed</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Speed to lead</div>
+        <div class="metric-val">min</div>
+        <div class="metric-sub">Target: under 5 minutes</div>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top:40px;margin-bottom:20px;">
+      <div class="section-label">
+        <div class="section-eyebrow">Weekly Dashboard</div>
+        <div class="section-title">Channel Performance Tracking</div>
+      </div>
+    </div>
+
+    <table class="kpi-table" style="margin-bottom:32px;">
+      <thead>
+        <tr>
+          <th>Channel</th>
+          <th>Metric to Track</th>
+          <th>Green Target</th>
+          <th>Warning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Facebook Ads</td>
+          <td>CPL, booking rate, cost per close</td>
+          <td><span class="kpi-status status-good">CPL &lt; $40</span></td>
+          <td>Booking rate below 20%</td>
+        </tr>
+        <tr>
+          <td>Google PPC</td>
+          <td>CPL, close rate, speed to contact</td>
+          <td><span class="kpi-status status-good">Close &gt; 25%</span></td>
+          <td>Response time over 5 min</td>
+        </tr>
+        <tr>
+          <td>Call Center</td>
+          <td>Dials, contact rate, appts set</td>
+          <td><span class="kpi-status status-good">&gt;10% contact</span></td>
+          <td>Cost per appt over $80</td>
+        </tr>
+        <tr>
+          <td>Canvassing</td>
+          <td>Doors knocked, leads set, close %</td>
+          <td><span class="kpi-status status-good">3% close rate</span></td>
+          <td>Cost per close over $800</td>
+        </tr>
+        <tr>
+          <td>Google Maps</td>
+          <td>Review count, map rank position</td>
+          <td><span class="kpi-status status-good">Top 3 map</span></td>
+          <td>Under 50 reviews total</td>
+        </tr>
+        <tr>
+          <td>Old Lead Reactivation</td>
+          <td>Town hall attendance, contracts</td>
+          <td><span class="kpi-status status-good">&gt;$100K/event</span></td>
+          <td>No quarterly reactivation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-header" style="margin-top:40px;margin-bottom:20px;">
+      <div class="section-label">
+        <div class="section-eyebrow">Warning Signs</div>
+        <div class="section-title">Red Flags — Fix These Immediately</div>
+      </div>
+    </div>
+
+    <div class="checklist">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text"><strong style="color:var(--text-primary);">Response over 5 minutes</strong> — fix GHL automation immediately. Every minute costs you money.</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text"><strong style="color:var(--text-primary);">Booking rate below 20%</strong> — script problem or wrong targeting. Audit call recordings.</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text"><strong style="color:var(--text-primary);">High CPL, low close rate</strong> — wrong quality leads or follow-up is broken. Check the data list quality first.</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text"><strong style="color:var(--text-primary);">Google reviews stalling</strong> — add the phone hand-off to every rep's mandatory close checklist.</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text"><strong style="color:var(--text-primary);">Reps not logging in CRM</strong> — retrain immediately. Untracked leads are permanently lost revenue.</div>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box"></div>
+        <div class="check-text"><strong style="color:var(--text-primary);">No cold lead reactivation in 90 days</strong> — schedule a Virtual Town Hall this week.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: TECH STACK -->
+  <div class="section" id="stack">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <div class="section-label">
+        <div class="section-eyebrow">Tools & Systems</div>
+        <div class="section-title">The AI Tech Stack</div>
+      </div>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-card">
+        <div class="stack-icon">⚙️</div>
+        <div class="stack-info">
+          <div class="stack-name">GoHighLevel (GHL)</div>
+          <div class="stack-desc">Central nerve center. AI appointment calling, 48-hour follow-up sequences, pipeline tracking, Google Calendar sync, recordings. Every lead flows through here.</div>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-icon">📞</div>
+        <div class="stack-info">
+          <div class="stack-name">Mojo Dialer</div>
+          <div class="stack-desc">Power dialer for call center. Pulls cell numbers for non-DNC contacts. Runs multi-line calling. Pair with bilingual VA team for maximum contact rate.</div>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-icon">🤖</div>
+        <div class="stack-info">
+          <div class="stack-name">ChatGPT</div>
+          <div class="stack-desc">Script generation. Feed it your hook-story-offer framework and ad type. Get a complete script in seconds. Paste into Instagram Edits. Repeat monthly.</div>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-icon">📱</div>
+        <div class="stack-info">
+          <div class="stack-name">Instagram Edits App</div>
+          <div class="stack-desc">Built-in teleprompter. Paste script, read while filming. No memorization. No agency. No studio. Just your phone and the job site or office.</div>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-icon">🚁</div>
+        <div class="stack-info">
+          <div class="stack-name">Drone + Report Software</div>
+          <div class="stack-desc">Detect damage. Auto-generate photo report. Send to homeowner before leaving. "I've already emailed you the report" — closes without pressure.</div>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-icon">📊</div>
+        <div class="stack-info">
+          <div class="stack-name">Meta Ads Manager</div>
+          <div class="stack-desc">Run 5 video variants. Dynamic creative optimization auto-picks winner. Build custom audiences from 10-second viewers. Retarget until they close.</div>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-icon">🗺️</div>
+        <div class="stack-info">
+          <div class="stack-name">Google My Business</div>
+          <div class="stack-desc">Post photos after every job. Collect reviews via phone hand-off at close. Map rank = free lead flow. The compounding channel that costs you zero per lead.</div>
+        </div>
+      </div>
+      <div class="stack-card">
+        <div class="stack-icon">📋</div>
+        <div class="stack-info">
+          <div class="stack-name">AI List Builder (PropStream / BatchLeads)</div>
+          <div class="stack-desc">Pull property records filtered to 15+ year roofs. Segment by home value. Match phones. Feed Mojo Dialer and text campaigns. This is the data foundation everything else rests on.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7: DO NOT -->
+  <div class="section" id="dont">
+    <div class="section-header">
+      <div class="section-num">07</div>
+      <div class="section-label">
+        <div class="section-eyebrow">Avoid These</div>
+        <div class="section-title">What Not to Do</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="warning">
+          <div class="callout-title">❌ Do Not Buy Shared Leads</div>
+          <div class="callout-text">HomeAdvisor, Angi, and lead brokers sell the same lead to 5+ companies simultaneously. You're in a race you can't win and paying for it. Own your lead source or don't bother.</div>
+        </div>
+        <div class="warning">
+          <div class="callout-title">❌ Do Not Run Google PPC Without Automation</div>
+          <div class="callout-text">Google leads are high-intent but expensive. If your response time is over 5 minutes, you will burn through budget with nothing to show. Build the system first, then turn on the spend.</div>
+        </div>
+        <div class="warning">
+          <div class="callout-title">❌ Do Not Scale Ads Without Follow-Up Built</div>
+          <div class="callout-text">More Facebook leads without a working 48-hour sequence just means more wasted spend. Speed to lead is the multiplier on every dollar you put into ads.</div>
+        </div>
+      </div>
+      <div>
+        <div class="warning">
+          <div class="callout-title">❌ Do Not Storm-Chase Only</div>
+          <div class="callout-text">Weather dependency is a lottery ticket, not a business. If you wait for hail, you can't keep people on payroll and you lose your team every slow season. Build the machine now.</div>
+        </div>
+        <div class="warning">
+          <div class="callout-title">❌ Do Not Skip Door-Knocking at Build Sites</div>
+          <div class="callout-text">An active build is the single best lead source in the neighborhood. Every neighbor who sees your crew is a warm lead. Not knocking those doors is money on the table you're walking past.</div>
+        </div>
+        <div class="warning">
+          <div class="callout-title">❌ Do Not Let Old Leads Go Untouched</div>
+          <div class="callout-text">Your cold lead list is a gold mine. A quarterly Virtual Town Hall converts leads you already paid for at near-zero marginal cost. Ignoring it is ignoring free revenue.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="done-counter" id="done-counter">
+  <div class="done-num" id="done-num">0</div>
+  <div>Items Complete</div>
+</div>
+
+<footer>
+  <div>Crown <span>Roofing</span> LLC — 2026 Staff Operations Playbook &nbsp;|&nbsp; Pinckney, MI &nbsp;|&nbsp; (734) 561-4098 &nbsp;|&nbsp; crownroofing.pro</div>
+</footer>
+
+<script>
+// SCROLL PROGRESS
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = Math.round((scrolled / total) * 100);
+  document.getElementById('scroll-progress').style.width = pct + '%';
+
+  // NAV ACTIVE STATE
+  const sections = ['phases','leads','speed','content','sales','kpis','stack','dont'];
+  const navLinks = document.querySelectorAll('nav a');
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 100) current = id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    const href = a.getAttribute('href').replace('#','');
+    if (href === current) a.classList.add('active');
+  });
+});
+
+// CHECK ITEMS
+let totalItems = 0;
+let checkedItems = 0;
+
+function updateProgress() {
+  const allItems = document.querySelectorAll('.check-item, .tl-item');
+  const doneItems = document.querySelectorAll('.check-item.checked, .tl-item.done');
+  totalItems = allItems.length;
+  checkedItems = doneItems.length;
+  const pct = totalItems > 0 ? Math.round((checkedItems / totalItems) * 100) : 0;
+  document.getElementById('overall-fill').style.width = pct + '%';
+  document.getElementById('overall-pct').textContent = pct + '%';
+  document.getElementById('done-num').textContent = checkedItems;
+}
+
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+  updateProgress();
+}
+
+function toggleDone(el) {
+  el.classList.toggle('done');
+  updateProgress();
+}
+
+// INIT
+document.addEventListener('DOMContentLoaded', () => {
+  updateProgress();
+});
+
+updateProgress();
+</script>
+</body>
+</html>
